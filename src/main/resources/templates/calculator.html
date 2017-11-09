@@ -6,5 +6,38 @@
 </head>
 <body>
 	<h2>Calculator Web App</h2>
+	<p>
+		Enter 2 <b>Numbers</b> and select an Operand
+	</p>
+	<p>
+		Hit <b>Calculate</b> to see the result
+	</p>
+	<form action="/" method="post">
+		<table>
+			<thead>
+				<tr>
+					<input type="number" name="firstNumber" required>
+				</tr>
+				<tr>
+					<select name="select">
+						<option>+</option>
+						<option>-</option>
+						<option>*</option>
+						<option>/</option>
+						<option>^</option>
+					</select>
+				</tr>
+				<tr>
+					<input type="number" name="secondNumber" required>
+				</tr>
+			</thead>
+		</table>
+		<br>
+		<button>Calculate</button>
+	</form>
+	<br>
+	<p>
+		<b><font color="blue">Your Result is:</font></b>
+	</p>
 </body>
 </html>
