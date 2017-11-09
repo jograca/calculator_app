@@ -25,14 +25,6 @@ public class CalculatorController {
 	@RequestMapping("/calculate")
 	public ModelAndView calculate(int firstNumber, int secondNumber, String select) {
 		
-		ModelAndView mv = new ModelAndView();
-		
-		mv.setViewName("calculate");
-		
-		mv.addObject("firstNumber", firstNumber);
-		mv.addObject("secondNumber", secondNumber);
-		mv.addObject("select", select);
-		
 		if (select.equals("+")) {
 			result = calculator.addValues(firstNumber, secondNumber);
 		}
@@ -49,8 +41,10 @@ public class CalculatorController {
 			result = calculator.quotientValues(firstNumber, secondNumber);
 		}
 		
-		mv.addObject("calculatedResult", result);
-		
+		ModelAndView mv = new ModelAndView();
+		mv.setViewName("calculator");
+		mv.addObject("value", result);
 		return mv;
+		
 	} 
 }
