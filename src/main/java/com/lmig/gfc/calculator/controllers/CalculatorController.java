@@ -43,6 +43,12 @@ public class CalculatorController {
 		
 		ModelAndView mv = new ModelAndView();
 		mv.setViewName("calculator");
+		mv.addObject("firstNumber", firstNumber);
+		mv.addObject("secondNumber", secondNumber);
+		mv.addObject("operand", select);
+		
+		mv.addObject("calculator", calculator);
+		
 		mv.addObject("value", result);
 		return mv;
 		
