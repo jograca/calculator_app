@@ -19,6 +19,6 @@ public class Calculator {
 	}
 	
 	public int quotientValues(int firstNumber, int secondNumber) {
-		return firstNumber ^ secondNumber;
+		return (int) Math.pow(firstNumber, secondNumber);
 	}
 }
