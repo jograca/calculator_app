@@ -36,11 +36,21 @@
 		<button>Calculate</button>
 	</form>
 	<br>
-	<p>
-		<b><font color="blue">{{#value}}Your Results: {{/value}}</font></b>
-	</p>
-	<p>
-		{{#value}} {{ firstNumber }} {{ operand }} {{ secondNumber }} = {{ value }} {{/value}} 
-	</p>
+	<table>
+		{{#calculatorMemory.calculationsList}}
+		<thead>
+		<tbody>
+
+			<tr>
+				<td>{{ firstNumber }}</td>
+				<td>{{ operation }}</td>
+				<td>{{ secondNumber }}</td>
+				<td> = </td>
+				<td>{{ result }}</td>
+			</tr>
+
+		</tbody>
+		{{/calculatorMemory.calculationsList}}
+	</table>
 </body>
 </html>

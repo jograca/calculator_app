@@ -5,51 +5,58 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.lmig.gfc.calculator.models.Calculator;
+import com.lmig.gfc.calculator.models.Memory;
 
 @Controller
 public class CalculatorController {
-	
-	private Calculator calculator;
+
+	private Memory calculatorMemory = new Memory (1);
 	
 	// Constructor
 	public CalculatorController() {
-		calculator = new Calculator();
+		calculatorMemory = new Memory(1);
 	}
-	
+
 	@RequestMapping("/")
 	public String detaultPage() {
-			return "calculator";
-	} 
-	
+		return "calculator";
+	}
+
 	@RequestMapping("/calculate")
 	public ModelAndView calculate(double firstNumber, double secondNumber, char select) {
-		
+
 		if (select == '+') {
+			Calculator calculator = new Calculator();
 			calculator.addValues(firstNumber, secondNumber);
+			calculatorMemory.storeResult(calculator);
 		}
 		if (select == '-') {
+			Calculator calculator = new Calculator();
 			calculator.subtractValues(firstNumber, secondNumber);
+			calculatorMemory.storeResult(calculator);
 		}
 		if (select == '*') {
+			Calculator calculator = new Calculator();
 			calculator.multiplyValues(firstNumber, secondNumber);
+			calculatorMemory.storeResult(calculator);
 		}
 		if (select == '/') {
+			Calculator calculator = new Calculator();
 			calculator.divideValues(firstNumber, secondNumber);
+			calculatorMemory.storeResult(calculator);
 		}
 		if (select == '^') {
+			Calculator calculator = new Calculator();
 			calculator.quotientValues(firstNumber, secondNumber);
+			calculatorMemory.storeResult(calculator);
 		}
 		
 		ModelAndView mv = new ModelAndView();
 		mv.setViewName("calculator");
-		mv.addObject("firstNumber", firstNumber);
-		mv.addObject("secondNumber", secondNumber);
-		mv.addObject("operand", select);
 		
-		mv.addObject("calculator", calculator);
-		
-		mv.addObject("value", calculator.getResult());
+		mv.addObject("calculatorMemory", calculatorMemory);
+
 		return mv;
-		
-	} 
+
+	}
 }
