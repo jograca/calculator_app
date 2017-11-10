@@ -21,7 +21,7 @@ public class CalculatorController {
 	public String detaultPage() {
 		return "calculator";
 	} 
-
+	
 	@RequestMapping("/calculate")
 	public ModelAndView calculate(double firstNumber, double secondNumber, char select) {
 
@@ -57,6 +57,34 @@ public class CalculatorController {
 		mv.addObject("calculatorMemory", calculatorMemory);
 
 		return mv;
+
+	}
+
+	@RequestMapping(value = "/oneargops")
+	public ModelAndView oneArgumentCalculate(double firstNumber, String select) {
+
+		if (select.equals("SIN")) {
+			Calculator calculator = new Calculator();
+			calculator.sinValues(firstNumber);
+			calculatorMemory.storeResult(calculator);
+		}
+		if (select.equals("COS")) {
+			Calculator calculator = new Calculator();
+			calculator.sinValues(firstNumber);
+			calculatorMemory.storeResult(calculator);
+		}
+		if (select.equals("TAN")) {
+			Calculator calculator = new Calculator();
+			calculator.sinValues(firstNumber);
+			calculatorMemory.storeResult(calculator);
+		}
+
+		ModelAndView mv = new ModelAndView();
+		mv.setViewName("calculator");
 		
-	} 
+		mv.addObject("calculatorMemory", calculatorMemory);
+
+		return mv;
+	}
+
 }
