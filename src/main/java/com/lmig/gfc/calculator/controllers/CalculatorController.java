@@ -10,7 +10,7 @@ import com.lmig.gfc.calculator.models.Calculator;
 public class CalculatorController {
 	
 	private Calculator calculator;
-	private int result;
+	private double result;
 	
 	// Constructor
 	public CalculatorController() {
@@ -23,7 +23,7 @@ public class CalculatorController {
 	} 
 	
 	@RequestMapping("/calculate")
-	public ModelAndView calculate(int firstNumber, int secondNumber, String select) {
+	public ModelAndView calculate(double firstNumber, double secondNumber, String select) {
 		
 		if (select.equals("+")) {
 			result = calculator.addValues(firstNumber, secondNumber);
