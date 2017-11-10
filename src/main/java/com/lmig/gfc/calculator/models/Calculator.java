@@ -2,23 +2,29 @@ package com.lmig.gfc.calculator.models;
 
 public class Calculator {
 
-	public double addValues(double firstNumber, double secondNumber) {
-		return Math.round(firstNumber + secondNumber);
+	private double result;
+	
+	public void addValues(double firstNumber, double secondNumber) {
+		result = firstNumber + secondNumber;
 	}
 	
-	public double subtractValues(double firstNumber, double secondNumber) {
-		return Math.round(firstNumber - secondNumber);
+	public void subtractValues(double firstNumber, double secondNumber) {
+		result = firstNumber - secondNumber;
 	}
 	
-	public double multiplyValues(double firstNumber, double secondNumber) {
-		return Math.round(firstNumber * secondNumber);
+	public void multiplyValues(double firstNumber, double secondNumber) {
+		result = firstNumber * secondNumber;
 	}
 	
-	public double divideValues(double firstNumber, double secondNumber) {
-		return firstNumber / secondNumber;
+	public void divideValues(double firstNumber, double secondNumber) {
+		result = firstNumber / secondNumber;
 	}
 	
-	public double quotientValues(double firstNumber, double secondNumber) {
-		return Math.pow(firstNumber, secondNumber);
+	public void quotientValues(double firstNumber, double secondNumber) {
+		result = Math.pow(firstNumber, secondNumber);
+	}
+
+	public double getResult() {
+		return result;
 	}
 }

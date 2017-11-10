@@ -10,7 +10,6 @@ import com.lmig.gfc.calculator.models.Calculator;
 public class CalculatorController {
 	
 	private Calculator calculator;
-	private double result;
 	
 	// Constructor
 	public CalculatorController() {
@@ -23,22 +22,22 @@ public class CalculatorController {
 	} 
 	
 	@RequestMapping("/calculate")
-	public ModelAndView calculate(double firstNumber, double secondNumber, String select) {
+	public ModelAndView calculate(double firstNumber, double secondNumber, char select) {
 		
-		if (select.equals("+")) {
-			result = calculator.addValues(firstNumber, secondNumber);
+		if (select == '+') {
+			calculator.addValues(firstNumber, secondNumber);
 		}
-		if (select.equals("-")) {
-			result = calculator.subtractValues(firstNumber, secondNumber);
+		if (select == '-') {
+			calculator.subtractValues(firstNumber, secondNumber);
 		}
-		if (select.equals("*")) {
-			result = calculator.multiplyValues(firstNumber, secondNumber);
+		if (select == '*') {
+			calculator.multiplyValues(firstNumber, secondNumber);
 		}
-		if (select.equals("/")) {
-			result = calculator.divideValues(firstNumber, secondNumber);
+		if (select == '/') {
+			calculator.divideValues(firstNumber, secondNumber);
 		}
-		if (select.equals("^")) {
-			result = calculator.quotientValues(firstNumber, secondNumber);
+		if (select == '^') {
+			calculator.quotientValues(firstNumber, secondNumber);
 		}
 		
 		ModelAndView mv = new ModelAndView();
@@ -49,7 +48,7 @@ public class CalculatorController {
 		
 		mv.addObject("calculator", calculator);
 		
-		mv.addObject("value", result);
+		mv.addObject("value", calculator.getResult());
 		return mv;
 		
 	} 
