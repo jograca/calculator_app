@@ -4,12 +4,9 @@ import java.util.ArrayList;
 
 public class Memory {
 
-	private int memoryCapacity;
+	private ArrayList<Calculator> calculationsList = new ArrayList<Calculator>();
 
-	private ArrayList<Calculator> calculationsList;
-
-	public Memory(int memoryCapacity) {
-		this.memoryCapacity = memoryCapacity;
+	public Memory() {
 		calculationsList = new ArrayList<Calculator>();
 	}
 
@@ -17,12 +14,12 @@ public class Memory {
 		calculationsList.add(0, calculation);
 	}
 
-	public int getMemoryCapacity() {
-		return memoryCapacity;
-	}
-
 	public ArrayList<Calculator> getCalculationsList() {
 		return calculationsList;
+	}
+	
+	public void clearMemory(Calculator calculation) {
+		calculationsList.clear();
 	}
 
 }

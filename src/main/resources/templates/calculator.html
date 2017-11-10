@@ -12,7 +12,7 @@
 	<p>
 		Hit <b>Calculate</b> to see the result
 	</p>
-	<form action="/calculate" method="post">
+	<form method="post" action="/calculate">
 		<table>
 			<thead>
 				<tr>
@@ -40,7 +40,6 @@
 		{{#calculatorMemory.calculationsList}}
 		<thead>
 		<tbody>
-
 			<tr>
 				<td>{{ firstNumber }}</td>
 				<td>{{ operation }}</td>

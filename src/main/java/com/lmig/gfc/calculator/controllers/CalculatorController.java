@@ -10,17 +10,17 @@ import com.lmig.gfc.calculator.models.Memory;
 @Controller
 public class CalculatorController {
 
-	private Memory calculatorMemory = new Memory(1);
+	private Memory calculatorMemory = new Memory();
 
 	// Constructor
 	public CalculatorController() {
-		calculatorMemory = new Memory(1);
+		calculatorMemory = new Memory();
 	}
 
 	@RequestMapping("/")
 	public String detaultPage() {
 		return "calculator";
-	}
+	} 
 
 	@RequestMapping("/calculate")
 	public ModelAndView calculate(double firstNumber, double secondNumber, char select) {
@@ -57,6 +57,6 @@ public class CalculatorController {
 		mv.addObject("calculatorMemory", calculatorMemory);
 
 		return mv;
-
-	}
+		
+	} 
 }
