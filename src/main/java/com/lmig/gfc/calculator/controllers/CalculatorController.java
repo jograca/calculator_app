@@ -10,8 +10,8 @@ import com.lmig.gfc.calculator.models.Memory;
 @Controller
 public class CalculatorController {
 
-	private Memory calculatorMemory = new Memory (1);
-	
+	private Memory calculatorMemory = new Memory(1);
+
 	// Constructor
 	public CalculatorController() {
 		calculatorMemory = new Memory(1);
@@ -50,10 +50,10 @@ public class CalculatorController {
 			calculator.quotientValues(firstNumber, secondNumber);
 			calculatorMemory.storeResult(calculator);
 		}
-		
+
 		ModelAndView mv = new ModelAndView();
 		mv.setViewName("calculator");
-		
+
 		mv.addObject("calculatorMemory", calculatorMemory);
 
 		return mv;

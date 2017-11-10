@@ -5,16 +5,16 @@ import java.util.ArrayList;
 public class Memory {
 
 	private int memoryCapacity;
-	
+
 	private ArrayList<Calculator> calculationsList;
-	
+
 	public Memory(int memoryCapacity) {
 		this.memoryCapacity = memoryCapacity;
 		calculationsList = new ArrayList<Calculator>();
 	}
-	
+
 	public void storeResult(Calculator calculation) {
-		calculationsList.add(calculation);
+		calculationsList.add(0, calculation);
 	}
 
 	public int getMemoryCapacity() {
@@ -24,5 +24,5 @@ public class Memory {
 	public ArrayList<Calculator> getCalculationsList() {
 		return calculationsList;
 	}
-	
+
 }
