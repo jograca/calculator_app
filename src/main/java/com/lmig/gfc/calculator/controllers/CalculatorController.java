@@ -62,7 +62,6 @@ public class CalculatorController {
 	public ModelAndView clearResultsView() {
 
 		Memory clearMemory = new Memory();
-
 		clearMemory.clearMemory();
 
 		ModelAndView mv = new ModelAndView();
