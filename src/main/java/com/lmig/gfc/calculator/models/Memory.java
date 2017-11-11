@@ -19,7 +19,7 @@ public class Memory {
 	}
 
 	public void clearMemory() {
-		calculationsList.clear();
+		calculationsList.removeAll(calculationsList);
 	}
 
 }
