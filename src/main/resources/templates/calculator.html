@@ -6,12 +6,6 @@
 </head>
 <body>
 	<h2>Calculator Web App</h2>
-	<p>
-		Enter 2 <b>Numbers</b> and select an Operand
-	</p>
-	<p>
-		Hit <b>Calculate</b> to see the result
-	</p>
 	<h3>Basic Functions</h3>
 	<form method="post" action="/calculate">
 		<table>
@@ -37,35 +31,14 @@
 		<button>Calculate</button>
 	</form>
 	<br>
-	<h3>One Argument Operations</h3>
-	<form method="post" action="/oneargops">
-		<table>
-			<thead>
-				<tr>
-					<input type="number" name="firstNumber" required>
-				</tr>
-				<tr>
-					<select name="select">
-						<option>SIN</option>
-						<option>COS</option>
-						<option>TAN</option>
-					</select>
-				</tr>
-			</thead>
-		</table>
-		<br>
-		<button>Calculate</button>
-	</form>
-	<br>
 	<table>
 		{{#calculatorMemory.calculationsList}}
 		<thead>
 		<tbody>
 			<tr>
 				<td>{{ firstNumber }}</td>
-				<td>{{#operation}} {{ operation }} {{/operation}}</td>
-				<td>{{#oneArgOp}} {{ oneArgOp }} {{/oneArgOp}}</td>
-				<td>{{#secondNumber}} {{ secondNumber }} {{/secondNumber}}</td>
+				<td>{{ operation }}</td>
+				<td>{{ secondNumber }}</td>
 				<td>=</td>
 				<td>{{ result }}</td>
 			</tr>

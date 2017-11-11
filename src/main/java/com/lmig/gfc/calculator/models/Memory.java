@@ -17,7 +17,7 @@ public class Memory {
 	public ArrayList<Calculator> getCalculationsList() {
 		return calculationsList;
 	}
-	
+
 	public void clearMemory(Calculator calculation) {
 		calculationsList.clear();
 	}
