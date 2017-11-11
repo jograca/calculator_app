@@ -13,11 +13,7 @@ public class Memory {
 	public void storeResult(Calculator calculation) {
 		calculationsList.add(0, calculation);
 	}
-
-	public ArrayList<Calculator> getCalculationsList() {
-		return calculationsList;
-	}
-
+	
 	public void clearMemory() {
 		calculationsList.clear();
 	}
