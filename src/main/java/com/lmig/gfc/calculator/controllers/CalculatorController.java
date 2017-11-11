@@ -58,7 +58,7 @@ public class CalculatorController {
 		return mv;
 	}
 
-	@RequestMapping("/clearMemory")
+	@RequestMapping("/clear")
 	public ModelAndView clearResultsView() {
 
 		Memory clearMemory = new Memory();
@@ -66,7 +66,7 @@ public class CalculatorController {
 		clearMemory.clearMemory();
 
 		ModelAndView mv = new ModelAndView();
-		mv.setViewName("clear");
+		mv.setViewName("calculator");
 
 		return mv;
 	}

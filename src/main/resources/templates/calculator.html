@@ -31,6 +31,11 @@
 		<button>Calculate</button>
 	</form>
 	<br>
+	<form method="post" action="/clear">
+		<input type="hidden">
+		<button>Clear Results</button>
+	</form>
+	<br>
 	<table>
 		{{#calculatorMemory.calculationsList}}
 		<thead>
@@ -42,7 +47,6 @@
 				<td>=</td>
 				<td>{{ result }}</td>
 			</tr>
-
 		</tbody>
 		{{/calculatorMemory.calculationsList}}
 	</table>
