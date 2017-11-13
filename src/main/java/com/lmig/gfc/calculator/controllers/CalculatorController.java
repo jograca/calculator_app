@@ -7,20 +7,27 @@ import org.springframework.web.servlet.ModelAndView;
 import com.lmig.gfc.calculator.models.Calculator;
 import com.lmig.gfc.calculator.models.Memory;
 
+// Setup a Controller
 @Controller
 public class CalculatorController {
 
+	// Instantiate the Memory Class
+	// Save to the variable "calculateMemory"
 	private Memory calculatorMemory = new Memory();
 
 	public CalculatorController() {
 		calculatorMemory = new Memory();
 	}
 
+	// Setup a RequestMapping for the home page
 	@RequestMapping("/")
 	public String detaultPage() {
 		return "calculator";
 	}
 
+	// Setup a RequestMapping for the calculate page
+	// Setup a ModelAndView which accepts 3 user inputs (firstNumber, secondNumber, select)
+	// Setup conditional statements to correctly call the right functions in the Calculator Class
 	@RequestMapping("/calculate")
 	public ModelAndView calculate(double firstNumber, double secondNumber, char select) {
 
@@ -58,6 +65,8 @@ public class CalculatorController {
 		return mv;
 	}
 
+	// Setup a RequestMapping for "clear"
+	// Setup a Model and View to call the clearResultsView method
 	@RequestMapping("/clear")
 	public ModelAndView clearResultsView() {
 

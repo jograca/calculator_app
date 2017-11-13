@@ -4,6 +4,8 @@ import java.util.ArrayList;
 
 public class Memory {
 
+	// Setup an array calculationsList to hold Calculator Objects
+	
 	private ArrayList<Calculator> calculationsList = new ArrayList<Calculator>();
 
 	public Memory() {
