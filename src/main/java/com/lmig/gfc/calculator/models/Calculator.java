@@ -7,6 +7,11 @@ public class Calculator {
 	private double result;
 	private char operation;
 
+<<<<<<< Updated upstream
+=======
+	// Create 5 methods to perform correct calculations	
+	
+>>>>>>> Stashed changes
 	public void addValues(double firstNumber, double secondNumber) {
 		this.firstNumber = firstNumber;
 		this.secondNumber = secondNumber;
@@ -41,7 +46,16 @@ public class Calculator {
 		operation = '^';
 		result = Math.pow(firstNumber, secondNumber);
 	}
+<<<<<<< Updated upstream
 
+=======
+	public void squareRootValues(double firstNumber) {
+		this.firstNumber = firstNumber;
+		operation = '√';
+		result = Math.sqrt(firstNumber);
+	}
+	
+>>>>>>> Stashed changes
 	public double getResult() {
 		return result;
 	}

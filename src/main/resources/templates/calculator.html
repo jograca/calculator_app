@@ -3,34 +3,38 @@
 <head>
 <meta charset="UTF-8">
 <title>Calculator Web App</title>
+<link rel="stylesheet" href="/app.css">
 </head>
 <body>
 	<h2>Calculator Web App</h2>
 	<h3>Basic Functions</h3>
 	<form method="post" action="/calculate">
-		<table>
-			<thead>
-				<tr>
-					<input type="number" name="firstNumber" required>
-				</tr>
-				<tr>
-					<select name="select">
-						<option>+</option>
-						<option>-</option>
-						<option>*</option>
-						<option>/</option>
-						<option>^</option>
-					</select>
-				</tr>
-				<tr>
-					<input type="number" name="secondNumber" required>
-				</tr>
-			</thead>
-		</table>
+
+		<input type="number" name="firstNumber" required> <select
+			name="select">
+			<option value="+" selected>+</option>
+			<option value="-">-</option>
+			<option value="*">*</option>
+			<option value="/">/</option>
+			<option value="^">^</option>
+		</select> <input type="number" name="secondNumber" required> <br>
+
 		<br>
+<<<<<<< Updated upstream
 		<button>Calculate</button>
+=======
+		<button>Calculate Result</button>
+		<br>
+	</form>
+
+	<br>
+	<form method="post" action="/clear">
+		<input type="hidden">
+		<button>Clear Results</button>
+>>>>>>> Stashed changes
 	</form>
 	<br>
+
 	<table>
 		{{#calculatorMemory.calculationsList}}
 		<thead>
