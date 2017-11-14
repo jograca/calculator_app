@@ -13,7 +13,7 @@ public class CalculatorController {
 
 	// Instantiate the Memory Class
 	// Save to the variable "calculateMemory"
-	private Memory calculatorMemory = new Memory();
+	private Memory calculatorMemory;
 
 	public CalculatorController() {
 		calculatorMemory = new Memory();
