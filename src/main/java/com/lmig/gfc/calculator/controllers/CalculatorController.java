@@ -21,8 +21,10 @@ public class CalculatorController {
 
 	// Setup a RequestMapping for the home page
 	@RequestMapping("/")
-	public String detaultPage() {
-		return "calculator";
+	public ModelAndView defaultPage() {
+		ModelAndView mv = new ModelAndView();
+		mv.setViewName("calculator");
+		return mv;
 	}
 
 	// Setup a RequestMapping for the calculate page
