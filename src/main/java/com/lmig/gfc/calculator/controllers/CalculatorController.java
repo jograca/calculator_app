@@ -28,8 +28,10 @@ public class CalculatorController {
 	}
 
 	// Setup a RequestMapping for the calculate page
-	// Setup a ModelAndView which accepts 3 user inputs (firstNumber, secondNumber, select)
-	// Setup conditional statements to correctly call the right functions in the Calculator Class
+	// Setup a ModelAndView which accepts 3 user inputs (firstNumber, secondNumber,
+	// select)
+	// Setup conditional statements to correctly call the right functions in the
+	// Calculator Class
 	@RequestMapping("/calculate")
 	public ModelAndView calculate(double firstNumber, double secondNumber, char select) {
 
